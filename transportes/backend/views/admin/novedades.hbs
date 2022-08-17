@@ -11,24 +11,24 @@
             
         </div>
         <div class="row">
-          <div class="col">  
+          <div class="col md-12">  
             <table class="table">
                 <thead >
                     <tr class="table-dark">
-                        <th>
-                        <th scope ="col" >#</th>
-                        <th scope="col" >titulo</th>
+                        <th>#</th>
+                        <th>titulo</th>
                         <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                   {{#each novedades}}  
                   <tr>
-                     <th scope="row">{{id}}</th>
-                     <td class="text-center">
-                         <td>{{titulo}}</td>
-                         <a class="btn btn-secondary" href=" "> Modificar </a>
-                         <a class="btn btm-primary" href="">Eliminar</a> 
+                     <th>{{id}}</th>
+                     
+                     <td>{{titulo}}</td>
+                      <td>
+                         <a class="btn btn-secondary" href="/admin/novedades/modificar/{{id}} "> <i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                         <a class="btn btm-primary" href="/admin/novedades/eliminar/{{id}}"><i class="fa fa-trash" aria-hidden="true"></i></a> 
                      </td>
                   </tr>   
                   {{/each}}

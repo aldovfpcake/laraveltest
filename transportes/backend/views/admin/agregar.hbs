@@ -2,7 +2,7 @@
     <div class="row"> 
         <duv class="col-6 offset-3">
            <h4> Agregar una nueva novedad</h4>
-           <form action ="/admin/novedades/agregar" method="post">
+           <form action ="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
              <div class="form-group" >
                   <input type="text" class="form-control"
                          placeholder="Titulo" name="titulo">
@@ -15,6 +15,10 @@
                   <input type="text" class="form-control"
                          placeholder="cuerpo" name="cuerpo">
                </div>
+                <div class="form-group" >
+                   <input type="file" class="form-control"
+                    placeholder="imagen" name="imagen">
+                 </div>
 
                <button type="text" class="btn btn-primary">Guardar</button>
            

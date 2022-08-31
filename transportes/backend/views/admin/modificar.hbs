@@ -1,30 +1,35 @@
-<div class="container" style="margin:100px auto" >
-    <div class="row"> 
+<div class="container" style="margin:100px auto">
+    <div class="row">
         <div class="col-6 offset-3">
-           <h4> Modificar Novedad</h4>
-           <form action ="/admin/novedades/modificar" method="post">
-              <input type ="text" value="{{novedad.id}}" name="id">
-              
-             <div class="form-group" >
-                  <input type="text" class="form-control"
-                         value="{{novedad.titulo}}"
-                         placeholder="Titulo" name="titulo">
-               </div>
-               <div class="form-group" >
-                  <input type="textarea" class="form-control"
-                         value="{{novedad.subtitulo}}"
-                         placeholder="subtitulo" name="subtitulo">
-               </div>
-                <div class="form-group" >
-                  <input type="text" class="form-control"
-                         value="{{novedad.cuerpo}}" 
-                         placeholder="novedad.cuerpo" name="cuerpo">
-               </div>
-               <button type="submit" class="btn btn-primary">Guardar</button> 
+            <h4> Modificar Novedad</h4>
+            <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
+                <input type ="hidden" value ="{{novedad.id}}" name = "id" />
+                <div class="form-group">
+                    <input type="text" class="form-control" value="{{novedad.titulo}}" placeholder="Titulo"
+                        name="titulo">
+                </div>
+                <div class="form-group">
+                    <input type="textarea" class="form-control" value="{{novedad.subtitulo}}" placeholder="subtitulo"
+                        name="subtitulo">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" value="{{novedad.cuerpo}}" placeholder="novedad.cuerpo"
+                        name="cuerpo">
+                </div>
+                <div class="form-group">
+                    <input type="file" class="form-control" placeholder="imagen" name="imagen" id="imagen">
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" name="img_delete" value = "1">
+                    <label class="form-check-label" for="exampleCheck1">Eliminar Imagen Actual</label>
+                    <input type="hidden" name="img_original"
+                           value="{{novedad.img_id}}">   
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
-            
-        </div> 
-        {{#if error}}  
-             <h5>{{message}}</h5>
-         {{/if}}    
-</div>     
+
+        </div>
+        {{#if error}}
+        <h5>{{message}}</h5>
+        {{/if}}
+    </div>

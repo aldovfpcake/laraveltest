@@ -6,6 +6,7 @@ var logger = require('morgan');
 var session = require('express-session');
 require('dotenv').config();
 var session = require('express-session'); 
+var cors  = require('cors');
 secured = async(req,res,next)=>{
     try {
          console.log(req.session.id_usuario);
@@ -27,6 +28,7 @@ var loginRouter = require('./routes/admin/login');
 var novedadesRouter = require('./routes/admin/novedades');
 var adminOtro   = require('./routes/admin/otro');
 var fileUpload  = require('express-fileupload');
+var apiRouter   = require('./routes/api');
 
 var app = express();
 
@@ -55,6 +57,7 @@ app.use('/users', usersRouter);
 app.use('/admin/login',loginRouter);
 app.use('/admin/novedades',secured,novedadesRouter);
 app.use('/admin/otro',adminOtro);
+app.use('/api',cors(),apiRouter);
 //app.use('/', require('./routes/admin/novedades'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

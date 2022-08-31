@@ -19,6 +19,7 @@ async function insertNovedad(obj){
 
 
 async function deleteNovedadesById(obj){
+ 
     try {
         var query = "delete from novedades where id = ?";
         var rows  = await pool.query(query,[obj]);

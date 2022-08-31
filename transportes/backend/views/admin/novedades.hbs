@@ -16,7 +16,8 @@
                 <thead >
                     <tr class="table-dark">
                         <th>#</th>
-                        <th>titulo</th>
+                        <th>Titulo</th>
+                        <th>Imagen</th>
                         <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
@@ -24,9 +25,9 @@
                   {{#each novedades}}  
                   <tr>
                      <th>{{id}}</th>
-                     
                      <td>{{titulo}}</td>
-                      <td>
+                     <td> {{{imagen}}}   </td> 
+                     <td>
                          <a class="btn btn-secondary" href="/admin/novedades/modificar/{{id}} "> <i class="fa fa-pencil" aria-hidden="true"></i> </a>
                          <a class="btn btm-primary" href="/admin/novedades/eliminar/{{id}}"><i class="fa fa-trash" aria-hidden="true"></i></a> 
                      </td>
